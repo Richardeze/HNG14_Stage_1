@@ -10,6 +10,7 @@ from schemas import ProfileCreate, ProfileResponse
 from services.external_apis import fetch_external_data
 from utils.classification import get_age_group
 from uuid6 import uuid7
+import os
 
 # Create tables
 models.Base.metadata.create_all(bind=engine)
@@ -165,3 +166,9 @@ def delete_profile(id: str, db: Session = Depends(get_db)):
     db.commit()
 
     return
+
+port = int(os.environ.get("PORT", 5000))
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
