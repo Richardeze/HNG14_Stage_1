@@ -99,7 +99,7 @@ https://api.agify.io
 https://api.nationalize.io
 🧪 Running Locally
 1. Clone repo
-git clone https://github.com/yourusername/your-repo.git
+git clone https://github.com/Richardeze/HNG14_Stage_1.git
 cd your-repo
 2. Create virtual environment
 python -m venv .venv
@@ -115,27 +115,6 @@ http://127.0.0.1:8000/docs
 
 This API is deployed on:
 
-👉 Base URL:
 
-https://your-app.pxxl.click
-📂 Project Structure
-.
-├── main.py
-├── models.py
-├── schemas.py
-├── database.py
-├── services/
-│   └── external_apis.py
-├── utils/
-│   └── classification.py
-├── requirements.txt
-└── README.md
-✅ HNG Requirements Covered
-✔ Multi-API Integration
-✔ Data Persistence
-✔ Idempotency
-✔ Filtering Logic
-✔ UUID v7
-✔ ISO 8601 Timestamps
-✔ Proper Error Handling
-✔ CORS Enabled
+
+
