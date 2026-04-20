@@ -10,10 +10,13 @@ NATIONALIZE_URL = "https://api.nationalize.io"
 
 async def fetch_external_data(name: str):
     async with httpx.AsyncClient() as client:
+        try:
+            gender_res = await client.get(GENDERIZE_URL, params={"name": name})
+            age_res = await client.get(AGIFY_URL, params={"name": name})
+            nation_res = await client.get(NATIONALIZE_URL, params={"name": name})
+        except Exception:
+            raise HTTPException(status_code=502, detail="External API request failed")
 
-        gender_res = await client.get(GENDERIZE_URL, params={"name": name})
-        age_res = await client.get(AGIFY_URL, params={"name": name})
-        nation_res = await client.get(NATIONALIZE_URL, params={"name": name})
 
         gender_data = gender_res.json()
         age_data = age_res.json()
