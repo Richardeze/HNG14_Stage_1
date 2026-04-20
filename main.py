@@ -34,7 +34,7 @@ def root():
         "message": "HNG Stage 1 API is running"
     }
 
-# ✅ TEST ROUTE (VERY IMPORTANT)
+
 @app.get("/test/{name}")
 async def test_api(name: str):
     data = await fetch_external_data(name)
@@ -167,7 +167,8 @@ def delete_profile(id: str, db: Session = Depends(get_db)):
 
     return
 
-port = int(os.environ.get("PORT", 5000))
+port = int(os.environ.get("PORT", 8000))
+
 
 if __name__ == "__main__":
     import uvicorn
