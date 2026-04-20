@@ -167,7 +167,7 @@ def delete_profile(id: str, db: Session = Depends(get_db)):
 
     return
 
-port = int(os.environ.get("PORT", 8000))
+port = int(os.environ.get("PORT", 7860))
 
 
 if __name__ == "__main__":
